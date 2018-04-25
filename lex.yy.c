@@ -906,7 +906,7 @@ YY_RULE_SETUP
                else
                {
                    printf("%s \t ID \n", yytext);
-                   if(lookup_symbol()==1)
+                   if(lookup_symbol()==-1)
                    {
                          fi++;
                    }
@@ -2110,11 +2110,11 @@ int lookup_symbol()
     {
       if(ID[c]==yytext[0])
       {
-           return 0;
+           return c;
       }
       else
       {
-           return 1;
+           return -1;
       }
     }
 
